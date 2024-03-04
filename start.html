@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            background-color: black;
+            color: azure;
+            display: flex;
+            list-style-type: none;
+        }
+        li {
+            margin: 20px;
+            padding: 40px;
+        }
+        a {
+            text-decoration: none;
+            color: beige;
+        }
+        .text {
+            text-align: center;
+            margin: 56px;
+            padding: 67px;
+            font-size: 50px;
+        }
+        button {
+            font-size: 30px;
+        }
+        .Select {
+            text-align: center;
+        }
+        #programDropdown {
+            font-size: 50px;
+            margin-right: 10px; /* Optional: Add some right margin for spacing */
+        }
+    </style>
+    <script>
+        function showBooks() {
+            var selectedOption = document.getElementById("programDropdown").value;
+            window.location.href = selectedOption.toLowerCase() + ".html";
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <nav class="nav-main">
+                <ul class="sub-main">
+                    <li>Home</li>
+                    <li><a href="">Recommended Book</a></li>
+                    <li><a href="">Most Viewed Books</a></li>
+                    <li><a href="">Feedback</a></li>
+                </ul>
+            </nav>
+            <p class="text">Select Your Preferred Course, To Get Books</p>
+        </div>
+        <div class="Select">
+            <select id="programDropdown">
+                <option value="btech">B.Tech</option>
+                <option value="bca">BCA</option>
+                <option value="mca">MCA</option>
+                <option value="mba">MBA</option>
+            </select>
+            <button class="say-hi-button" onclick="showBooks()">Show Books</button>
+        </div>
+    </div>
+</body>
+</html>
