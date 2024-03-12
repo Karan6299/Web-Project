@@ -1,61 +1,251 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .containe{
-            margin: 0px;
-            height: fit-content;
-        }
-            .semester{
-                font-size: 40px;
-                text-align: center;
-            }
-            a{
-                text-decoration: none;  
-            }
-            .say-hi-button{
-                text-align: center;
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-wrap: wrap;
+      padding: -7vh;
+      justify-content: center;
+    }
 
-            
-    </style>
+    nav {
+      background-color: #333;
+      overflow: hidden;
+      padding: 20px 0;
+      width: 100%;
+  }
+  
+  nav a {
+      float: left; /* Align the navigation items to the left */
+      color: #f2f2f2;
+      text-align: center;
+      padding: 15px 20px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+      font-size: 18px;
+  }
+  
+  nav a:hover {
+      background-color: #ddd;
+      color: black;
+      transform: scale(1.1);
+  }
+  
+  /* Move the search container to the right */
+  .search-container {
+      float: right;
+      margin-right: 20px;
+  }
+  
+  input[type=text] {
+      padding: 10px;
+      margin-top: 8px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+  }
+      /* Add some styling to make it look more attractive */
+    nav a, input[type=text] {
+      border-radius: 4px;
+    }
+
+    .box {
+        margin: 10px;
+        padding: 20px;
+        border: 2px solid #3498db;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        font-size: 20px;
+        width: 45%;
+        background-color: #ffffff;
+        transition: transform 0.3s ease; /* Added transition for smooth effect */
+    }
+    
+    .box:hover {
+        transform: translateY(-10px); /* Move the box upward on hover */
+    }
+    
+    h1 {
+        width: 100%;
+        text-align: center;
+        font-size: 3.5em;
+        font-family: 'Arial', sans-serif;
+        color: #333;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Navigation bar styles */
+
+    h2 {
+        font-size: 200%;
+    }
+
+    a:hover {
+        cursor: pointer;
+        background-color: rgb(219, 222, 255);
+    }
+    
+    ul {
+        list-style: none;
+    }
+
+    /* Animation effect on navigation items */
+    nav a {
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+      transform: scale(1.1);
+    }
+
+    footer {
+      background-color: #333;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 15px;
+      /* Remove position: fixed; */
+      /* bottom: 0; */
+      width: 100%;
+  }
+  
+      footer a {
+        color: #f2f2f2;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+  
+      footer a:hover {
+        text-decoration: underline;
+        cursor: pointer;
+        background-color: #333;
+      }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="Select">
-            <select id="programDropdown">
-                <option value="Computer Science and Engineering (CSE) ">Computer Science and Engineering (CSE)</option>
-                <option value="Electrical Engineering (EE)">Electrical Engineering (EE)</option>
-                <option value="Mechanical Engineering (ME): ">Mechanical Engineering (ME): </option>
-                <option value="Civil Engineering (CE):">Civil Engineering (CE):</option>
-                <option value="Electronics and Communication Engineering (ECE):">Electronics and Communication Engineering (ECE):</option>
-                <option value="nformation Technology (IT):">nformation Technology (IT):</option>
-                <option value="Chemical Engineering (ChemE):">Chemical Engineering (ChemE):</option>
-                <option value="Aerospace Engineering: ">Aerospace Engineering: </option>
-                <option value="Biotechnology Engineering:">Biotechnology Engineering:</option>
-                <option value="Automobile Engineering: ">Automobile Engineering: </option>
 
-                
-            </select>
-            <button class="say-hi-button" onclick="showBooks()">Select Trade</button>
-
-        </div>
-        <div class="semester">
-            
-            <p>
-               <a href=" Semester 1"> Semester 1</a> 
-               <br> <a href="Semester 2">Semester 2</a> <br>
-               <a href=" Semester 3">Semester 3</a> <br> 
-               <a href="Semester 4">Semester 4</a> <br> 
-               <a href="Semester 5">Semester 5</a><br>
-               <a href="Semester 6">Semester 6</a><br>
-               <a href="Semester 7">Semester 7</a><br>
-               <a href="Semester 8">Semester 8</a><br>
-            </p>
-        </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#how-to-use">How to Use</a>
+    <a href="#feedback">Feedback</a>
+    
+    <!-- Search bar -->
+    <div class="search-container">
+      <input type="text" placeholder="Search...">
     </div>
+  </nav>
+
+  <h1>Discover and Choose Your Preferred Subject : </h1>
+
+  <div class="box">
+      <h2>1st Semester Subjects</h2>
+      <ul class="box1">
+          <li><a href="">Mathematics - I</a></li>
+          <li><a href="">Physics</a></li>
+          <li><a href="">Chemistry</a></li>
+          <li><a href="">Introduction to Computing and Problem Solving</a></li>
+          <li><a href="">Basic Electrical Engineering</a></li>
+          <li><a href="">Engineering Drawing</a></li>
+          <li><a href="">Workshop Practice</a></li>
+      </ul>
+  </div>
+  <div class="box">
+      <h2>2nd Semester Subjects</h2>
+      <ul class="box2">
+          <li><a href="">Mathematics - II</a></li>
+          <li><a href="">Environmental Studies</a>Environmental Studies</li>
+          <li><a href="">Programming in C</a></li>
+          <li><a href="">Digital Systems</a></li>
+          <li><a href="">Basic Electronics Engineering</a></li>
+          <li><a href="">Communication Skills</a></li>
+      </ul>
+  </div>
+  <div class="box">
+    <h2>3rd Semester Subjects</h2>
+    <ul class="box3">
+        <li><a href="">Mathematics - III</a></li>
+        <li><a href="">Data Structures </a></li>
+        <li><a href="">Object-Oriented Programming using C++</a></li>
+        <li><a href="">Computer Organization and Architecture</a></li>
+        <li><a href="">Discrete Mathematics</a></li>
+        <li><a href="">Analog Electronics</a></li>
+        <li><a href="">Electrical Technology</a></li>
+    </ul>
+</div>
+<div class="box">
+  <h2>4th Semester Subjects</h2>
+  <ul class="box4">
+      <li><a href="">Mathematics - IV</a></li>
+      <li><a href="">Design and Analysis of Algorithms</a></li>
+      <li><a href="">Operating Systems</a></li>
+      <li><a href="">Database Management Systems (DBMS)</a></li>
+      <li><a href="">Microprocessors and Microcontroller</a></li>
+      <li><a href="">Computer Networks</a></li>
+  </ul>
+</div>
+<div class="box">
+  <h2>5th Semester Subjects</h2>
+  <ul class="box5">
+      <li><a href="">Theory of Computation</a></li>
+      <li><a href="">Software Engineering </a></li>
+      <li><a href="">Computer Graphics</a></li>
+      <li><a href="">Web Technologies</a></li>
+      <li><a href="">Compiler Design</a></li>
+      <li><a href="">Elective I</a></li>
+  </ul>
+</div>
+<div class="box">
+    <h2>6th Semester Subjects</h2>
+    <ul class="box6">
+        <li><a href="">Artificial Intelligence</a></li>
+        <li><a href="">System Software</a></li>
+        <li><a href="">Cryptography and Network Security</a></li>
+        <li><a href="">Distributed Systems</a></li>
+        <li><a href="">Elective II</a></li>
+        <li><a href="">Industrial Training/Internship</a></li>
+    </ul>
+</div>
+<div class="box">
+    <h2>7th Semester Subjects</h2>
+    <ul class="box6">
+        <li><a href="">Cloud Computing</a></li>
+        <li><a href="">Machine Learning</a></li>
+        <li><a href="">Internet of Things (IoT)</a></li>
+        <li><a href="">Mobile Application Development</a></li>
+        <li><a href="">Elective III</a></li>
+        <li><a href="">Project - I</a></li>
+    </ul>
+</div>
+<div class="box">
+    <h2>8th Semester Subjects</h2>
+    <ul class="box6">
+        <li><a href="">Big Data Analytics</a></li>
+        <li><a href="">Cybersecurity</a></li>
+        <li><a href="">Blockchain Technology</a></li>
+        <li><a href="">Natural Language Processing</a></li>
+        <li><a href="">Elective IV</a></li>
+        <li><a href="">Project - II</a></li>
+    </ul>
+</div>
+  </div>
+
+
+  <footer>
+    <p>This website is crafted by <span style="font-weight: bold; color: #3498db;">Rishav</span> and <span style="font-weight: bold; color: #e74c3c;">Karan</span>.</p>
+    <p><i>Contact</i> us: <a href="#contact">Contact</a></p>
+    <p><u>Feedback</u>: <a href="#feedback">Leave Feedback</a></p>
+</footer>
+
 </body>
 </html>
