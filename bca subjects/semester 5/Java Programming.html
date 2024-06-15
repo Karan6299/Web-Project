@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0px;
+    }
+
+    .row {
+      display: flex;
+    }
+
+    .box {
+      margin: 10px;
+      padding: 20px;
+      background-color: #fff;
+      height: 467px;
+      width: 600px;
+      border: 2px solid #ccc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      text-align: center;
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .box img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 55%;
+      width: 35%;
+      object-fit: cover;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 20px;
+    }
+
+    nav {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: left;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 20px;
+      transition: background-color 0.2s;
+    }
+
+    .nav-link:hover {
+      background-color: #555;
+      border-radius: 5px;
+      padding: 5px 10px;
+    }
+
+    .details {
+      position: absolute;
+      font-size: x-large;
+      color: #333;
+    }
+
+    .box-head {
+      font-size: 40px;
+      padding: 1px;
+      margin: 1px;
+      text-align: right;
+      color: #5a5a5a;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0px;
+      margin: 20px;
+    }
+
+    .main-title {
+      text-align: center;
+      color: #333;
+    }
+
+    .subtitle {
+      position: relative;
+      text-align: left;
+      right: 278px;
+      bottom: -26px;
+      color: #555;
+    }
+
+    .footer-text {
+      font-size: 14px;
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .info {
+      font-size: 25px;
+      position: absolute;
+      bottom: -7px;
+      right: 30px;
+      color: #007bff;
+    }
+
+    .info-link {
+      color: #007bff;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+
+    .info-link:hover {
+      background-color: #e1f5fe;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    
+    footer {
+      background-color: #333; /* Matching the navigation background */
+      color: white; /* White text to contrast with the dark background */
+      text-align: center;
+      padding: 20px;
+      width: 100%; /* Ensure footer spans full width */
+      box-sizing: border-box; /* Include padding in the element's total width and height */
+      position: relative; /* Ensure it stays in the document flow */
+      left: 0; /* Align to the left edge */
+      right: 0; /* Align to the right edge */
+    }
+    
+    .footer-text {
+      margin: 10px 0;
+    }
+    
+    .footer-link {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      background-color: transparent; /* Ensure the link background is transparent */
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+    }
+    
+    .footer-link:hover {
+      background-color: #555; /* Darker background on hover for links */
+    }
+    
+    
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-link" href="#">Home</a>
+    <a class="nav-link" href="#">About</a>
+    <a class="nav-link" href="feedback.html">Feedback</a>
+  </nav>
+
+  <h1 class="main-title">Operating System</h1>
+  <div class="container">
+    <div class="row">
+      <div class="box">
+        <img class="pic" src="/orignal img/operating-system-original.webp" alt="Image" />
+        <h3 class="box-head">Operating System</h3>
+        <span class="details">
+          <h4>Author</h4>
+          <ul>
+            <li>Heavy m Datial</li>
+            <li>Paul J. Datal</li>
+            <li>Dravid B. Coffness</li>
+          </ul>
+          <h2 class="subtitle">Edition : 3rd</h2>
+        </span>
+
+        <span class="info">
+          <h3><a class="info-link" href="download_page_url" target="_blank">Download</a></h3>
+          <h3><a class="info-link" href="read_online_page_url" target="_blank">Read Online</a></h3>
+          <h3><a class="info-link" href="buy_online_page_url" target="_blank">Buy Online</a></h3>
+        </span>
+      </div>
+
+      <div class="box">
+        <img class="pic" src="/orignal img/operating-system-original.webp" alt="Operating System Image" />
+        <h3 class="box-head">Operating System</h3>
+        <span class="details">
+          <h4>Author</h4>
+          <ul>
+            <li>Heavy m Datial</li>
+            <li>Paul J. Datal</li>
+            <li>Dravid B. Coffness</li>
+          </ul>
+          <h2 class="subtitle">Edition : 3rd</h2>
+        </span>
+        <span class="info">
+          <h3><a class="info-link" href="download_page_url" target="_blank">Download</a></h3>
+          <h3><a class="info-link" href="read_online_page_url" target="_blank">Read Online</a></h3>
+          <h3><a class="info-link" href="buy_online_page_url" target="_blank">Buy Online</a></h3>
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="box">
+        <img class="pic" src="/orignal img/operating-system-original.webp" alt="Operating System Image" />
+        <h3 class="box-head">Operating System</h3>
+        <span class="details">
+          <h4>Author</h4>
+          <ul>
+            <li>Heavy m Datial</li>
+            <li>Paul J. Datal</li>
+            <li>Dravid B. Coffness</li>
+          </ul>
+          <h2 class="subtitle">Edition : 3rd</h2>
+        </span>
+        <span class="info">
+          <h3><a class="info-link" href="download_page_url" target="_blank">Download</a></h3>
+          <h3><a class="info-link" href="read_online_page_url" target="_blank">Read Online</a></h3>
+          <h3><a class="info-link" href="buy_online_page_url" target="_blank">Buy Online</a></h3>
+        </span>
+      </div>
+
+      <div class="box">
+        <img class="pic" src="/orignal img/operating-system-original.webp" alt="Operating System Image" />
+        <h3 class="box-head">Operating System</h3>
+        <span class="details">
+          <h4>Author</h4>
+          <ul>
+            <li>Heavy m Datial</li>
+            <li>Paul J. Datal</li>
+            <li>Dravid B. Coffness</li>
+          </ul>
+          <h2 class="subtitle">Edition : 3rd</h2>
+        </span>
+        <span class="info">
+          <h3><a class="info-link" href="download_page_url" target="_blank">Download</a></h3>
+          <h3><a class="info-link" href="read_online_page_url" target="_blank">Read Online</a></h3>
+          <h3><a class="info-link" href="buy_online_page_url" target="_blank">Buy Online</a></h3>
+        </span>
+      </div>
+    </div>
+
+    <footer>
+      <p class="footer-text">This website is crafted by <span style="font-weight: bold; color: #3498db;">Rishav</span> and <span style="font-weight: bold; color: #e74c3c;">Karan</span>.</p>
+      <p class="footer-text"><i>Contact</i> us: <a class="footer-link" href="#contact">Contact</a></p>
+      <p class="footer-text"><u>Feedback</u>: <a class="footer-link" href="feedback.html">Leave Feedback</a></p>
+    </footer>
+  </body>
+</html>

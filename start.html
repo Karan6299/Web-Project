@@ -1,75 +1,243 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduBook Finder</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
+      /* Global Styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Verdana", sans-serif;
+        color: #333;
+        background-color: #f4f4f4; /* Light background color for contrast */
+      }
+
+      /* Navigation Styles */
+      .nav-main {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 0;
+      }
+      .nav-main ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Adjusted the gap between menu items */
+      }
+      .nav-main li {
+        margin: 0 10px; /* Adjusted margin for more balanced spacing */
+      }
+      .nav-main a {
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .nav-main a:hover {
+        color: #ffd700;
+      }
+
+      /* Logo Styles */
+      /* Logo Styles */
+      .logo {
+        font-size: 40px;
+        color: #ff8c00; /* Changed color to a more vibrant orange */
+        text-shadow: 0 0 5px rgba(255, 140, 0, 0.8); /* Initial subtle glow */
+        font-family: "Courier New", Courier, monospace;
+        text-align: center;
+        margin: 20px 0;
+        transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition for hover effect */
+      }
+      .logo:hover {
+        text-shadow: 0 0 20px rgba(255, 140, 0, 1),
+          0 0 30px rgba(255, 140, 0, 1); /* Stronger glow on hover */
+        color: #ffd700; /* Change to gold color on hover */
+      }
+      .logo span {
+        font-size: 20px;
+        display: block;
+        color: #414141;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+      }
+
+      /* Main Content Styles */
+      .main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-image: url("original/image.jpg"); /* Replace this with the relative path to your local image */
+        background-size: cover;
+        background-position: center;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        margin-top: 20px; /* Adds space between the nav bar and main content */
+        margin-bottom: 20px; /* Adds space between the main content and the next section */
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.8
+        ); /* Adding a slight white background for text
+readability */
+      }
+
+      /* Text Styles */
+      .text {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #4caf50;
+      }
+
+      /* Select Dropdown Styles */
+      .Select {
+        text-align: center;
+        margin-top: 20px;
+      }
+      #programDropdown {
+        font-size: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      #programDropdown:focus {
+        border-color: #4caf50;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Button Styles */
+      .say-hi-button {
+        font-size: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+      .say-hi-button:hover {
+        background-color: #3e8e41;
+      }
+
+      /* Free Courses Section */
+      .free-courses {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #ddd;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transitions for hover effect */
+      }
+      .free-courses:hover {
+        transform: scale(1.05); /* Slightly enlarge the box on hover */
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+      }
+      .free-courses h2 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .free-courses .explore-button {
+        font-size: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .free-courses .explore-button:hover {
+        background-color: #3e8e41;
+      }
+
+      /* Marquee Styles */
+      .marquee {
+        width: 100%;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #ffd700;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+      }
+      .marquee p {
+        display: inline-block;
+        white-space: nowrap;
+        animation: marquee 15s linear infinite;
+      }
+      @keyframes marquee {
+        from {
+          transform: translateX(100%);
         }
-        ul {
-            background-color: black;
-            color: azure;
-            display: flex;
-            list-style-type: none;
+        to {
+          transform: translateX(-100%);
         }
-        li {
-            margin: 20px;
-            padding: 40px;
-        }
-        a {
-            text-decoration: none;
-            color: beige;
-        }
-        .text {
-            text-align: center;
-            margin: 56px;
-            padding: 67px;
-            font-size: 50px;
-        }
-        button {
-            font-size: 30px;
-        }
-        .Select {
-            text-align: center;
-        }
-        #programDropdown {
-            font-size: 50px;
-            margin-right: 10px; /* Optional: Add some right margin for spacing */
-        }
+      }
     </style>
-    <script>
-        function showBooks() {
-            var selectedOption = document.getElementById("programDropdown").value;
-            window.location.href = selectedOption.toLowerCase() + ".html";
-        }
-    </script>
-</head>
-<body>
-    <div class="main">
-        <div>
-            <nav class="nav-main">
-                <ul class="sub-main">
-                    <li>Home</li>
-                    <li><a href="">Recommended Book</a></li>
-                    <li><a href="">Most Viewed Books</a></li>
-                    <li><a href="">Feedback</a></li>
-                </ul>
-            </nav>
-            <p class="text">Select Your Preferred Course, To Get Books</p>
-        </div>
-        <div class="Select">
-            <select id="programDropdown">
-                <option value="btech">B.Tech</option>
-                <option value="bca">BCA</option>
-                <option value="mca">MCA</option>
-                <option value="mba">MBA</option>
-            </select>
-            <button class="say-hi-button" onclick="showBooks()">Show Books</button>
-        </div>
+  </head>
+  <body>
+    <div class="logo">
+      EduBook Finder
+      <span>Your Gateway to Knowledge</span>
     </div>
-    <a href="feedback.html">feedback.html</a>
-</body>
+    <div class="nav-main">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Recommended Book</a></li>
+        <li><a href="#">Most Viewed Books</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+    <div class="main">
+      <p class="text">Select Your Preferred Course to Get Books</p>
+      <div class="Select">
+        <select id="programDropdown">
+          <option value="btech">B.Tech</option>
+          <option value="bca">BCA</option>
+          <option value="mca">MCA</option>
+          <option value="mtech">M.Tech</option>
+        </select>
+        <button class="say-hi-button" onclick="showBooks()">Show Books</button>
+      </div>
+    </div>
+    <div class="free-courses">
+      <h2>Explore Recommended Free Online Courses</h2>
+      <a href="rfree-courses.html" class="explore-button"
+        >Click Here to Explore</a
+      >
+    </div>
+    <div class="marquee">
+      <p>
+        Developed by Rishabh, Karan, and Amarjeet, under the esteemed guidance
+        of Mr. Ramesh Sir, Mr. Saqib Sir, Mr. Manish Sir, and Ms. Viva Ma'am.
+      </p>
+    </div>
+    <script>
+      function showBooks() {
+        var selectedOption = document.getElementById("programDropdown").value;
+        window.location.href = selectedOption.toLowerCase() + ".html";
+      }
+    </script>
+  </body>
 </html>

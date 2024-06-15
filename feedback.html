@@ -1,63 +1,159 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Feedback Form</title>
+    <title>Feedback - eduBOOK Finder</title>
     <style>
+        /* Styling for the body of the webpage */
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
+            font-family: Arial, sans-serif; /* Setting the font family for the entire page */
+            background-color: #f9f9f9; /* Setting the background color */
+            color: #333; /* Setting the text color */
+            display: flex; /* Making the body a flex container */
+            justify-content: center; /* Centering the content horizontally */
+            align-items: center; /* Centering the content vertically */
+            height: 100vh; /* Making the body height equal to the viewport height */
+            margin: 0; /* Removing default margin */
         }
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        /* Styling for the feedback form */
+        .feedback-form {
+            background-color: #fff; /* Setting the background color */
+            padding: 30px; /* Adding padding around the form */
+            border-radius: 10px; /* Adding rounded corners */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Adding a box shadow for depth */
+            width: 350px; /* Setting the width of the form */
+            max-width: 90%; /* Setting the maximum width to 90% of the viewport */
+            transition: transform 0.3s ease; /* Adding transition for hover effect */
         }
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
+        /* Hover effect for the feedback form */
+        .feedback-form:hover {
+            transform: translateY(-5px); /* Moving the form slightly upwards on hover */
         }
-        input[type="text"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        /* Styling for the website name */
+        .feedback-form h1 {
+            margin-top: 0; /* Removing top margin */
+            color: #4CAF50; /* Setting text color */
+            font-size: 28px; /* Setting font size */
+            margin-bottom: 20px; /* Adding bottom margin */
+            text-align: center; /* Centering the text */
+            font-weight: bold; /* Making the text bold */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adding shadow effect */
         }
-        textarea {
-            height: 150px;
+        /* Styling for the heading of the form */
+        .feedback-form h2 {
+            margin-top: 0; /* Removing top margin */
+            color: #333; /* Setting text color */
+            font-size: 20px; /* Setting font size */
+            margin-bottom: 15px; /* Adding bottom margin */
+            text-align: center; /* Centering the text */
         }
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        /* Styling for form labels */
+        .feedback-form label {
+            display: block; /* Displaying labels as block elements */
+            margin-bottom: 8px; /* Adding bottom margin */
+            font-weight: bold; /* Making the text bold */
         }
-        input[type="submit"]:hover {
-            background-color: #45a049;
+        /* Styling for form input fields and textarea */
+        .feedback-form input[type="text"],
+        .feedback-form input[type="email"],
+        .feedback-form textarea {
+            width: calc(100% - 22px); /* Setting width */
+            padding: 10px; /* Adding padding */
+            margin-bottom: 15px; /* Adding bottom margin */
+            border: 1px solid #ccc; /* Adding border */
+            border-radius: 6px; /* Adding rounded corners */
+            font-size: 16px; /* Setting font size */
+        }
+        /* Styling for the textarea */
+        .feedback-form textarea {
+            resize: vertical; /* Allowing vertical resizing */
+            height: 120px; /* Setting initial height */
+        }
+        /* Styling for the submit button */
+        .feedback-form input[type="button"] {
+            background-color: #4CAF50; /* Setting background color */
+            color: white; /* Setting text color */
+            padding: 12px 24px; /* Adding padding */
+            border: none; /* Removing border */
+            border-radius: 6px; /* Adding rounded corners */
+            cursor: pointer; /* Setting cursor to pointer */
+            width: 100%; /* Setting width */
+            font-size: 16px; /* Setting font size */
+            transition: background-color 0.3s ease; /* Adding transition */
+        }
+        /* Styling for submit button hover effect */
+        .feedback-form input[type="button"]:hover {
+            background-color: #45a049; /* Changing background color on hover */
+        }
+        /* Styling for the thank-you message */
+        .thank-you {
+            display: none; /* Hiding the thank-you message by default */
+            color: #4CAF50; /* Setting text color */
+            font-weight: bold; /* Making the text bold */
+            text-align: center; /* Centering the text */
+            font-size: 18px; /* Setting font size */
+            margin-top: 20px; /* Adding top margin */
+            border: 2px solid #4CAF50; /* Adding border */
+            padding: 10px; /* Adding padding */
+            border-radius: 6px; /* Adding rounded corners */
+            background-color: #f9f9f9; /* Setting background color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding box shadow */
         }
     </style>
 </head>
 <body>
 
-<form action="#" method="post">
-    <label for="code">Code:</label>
-    <textarea id="code" name="code" placeholder="Enter your code here"></textarea>
+<div class="feedback-form">
+    <!-- Heading with the website name -->
+    <h1>eduBOOK Finder</h1>
+    <!-- Heading of the form -->
+    <h2>Submit Your Feedback</h2>
+    <form id="form">
+        <!-- Label and input field for Name -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <!-- Label and input field for Enrollment Number -->
+        <label for="enrollment">Enrollment Number:</label>
+        <input type="text" id="enrollment" name="enrollment" required pattern="\d+">
 
-    <label for="feedback">Feedback:</label>
-    <textarea id="feedback" name="feedback" placeholder="Enter your feedback here"></textarea>
+        <!-- Label and input field for Email -->
+        <label for="email">Gmail:</label>
+        <input type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$">
+        
+        <!-- Label and textarea for Feedback -->
+        <label for="feedback">Your Feedback:</label>
+        <textarea id="feedback" name="feedback" required></textarea>
+        
+        <!-- Submit button -->
+        <input type="button" value="Submit Feedback" onclick="validateForm()">
+    </form>
+    <!-- Thank-you message -->
+    <div class="thank-you" id="thank-you">
+        Thanks for submitting your feedback!
+    </div>
+</div>
 
-    <input type="submit" value="Submit Feedback">
-</form>
+
+</div>
+</div>
+
+<script>
+    // Function to validate the form and display thank-you message
+    function validateForm() {
+        var form = document.getElementById('form');
+        if (form.checkValidity()) {
+            form.style.display = 'none'; // Hide the form
+            document.getElementById('thank-you').style.display = 'block'; // Show the thank-you message
+        } else {
+            form.reportValidity(); //
+            form.reportValidity(); // Trigger the built-in form validation
+        }
+    }
+</script>
 
 </body>
 </html>
